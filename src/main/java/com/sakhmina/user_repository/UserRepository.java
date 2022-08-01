@@ -15,7 +15,7 @@ public class UserRepository {
 
     public UserRepository(){
         addUserAuthorities("Ivan","password", Arrays.asList(Authorities.READ,Authorities.WRITE));
-        addUserAuthorities("Alex","password2", Arrays.asList(Authorities.READ));
+        addUserAuthorities("Alex","password2", Arrays.asList(Authorities.READ,Authorities.WRITE));
 
     }
 

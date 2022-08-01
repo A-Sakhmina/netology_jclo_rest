@@ -5,11 +5,17 @@ import com.sakhmina.exceptions.UnauthorizedUser;
 import com.sakhmina.authorities.Authorities;
 import com.sakhmina.user_repository.UserRepository;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AuthorizationService {
     UserRepository userRepository;
+
+    public AuthorizationService(UserRepository userRepository){
+        this.userRepository=userRepository;
+    }
 
     public List<Authorities> getAuthorities(String user, String password) throws InvalidCredentials, UnauthorizedUser {
         if (isEmpty(user) || isEmpty(password)) {

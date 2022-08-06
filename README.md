@@ -13,9 +13,9 @@
 
 ### Примеры ответов на запросы
 
-- [Пример 1. Корректный запрос](README.md:18)
-- [Пример 2. Обработчик ошибок на UnauthorizedUser](README.md:20)
-- [Пример 3. Обработчик ошибок на InvalidCredentials](README.md:22)
+- [Пример 1. Корректный запрос](request_and_answer.jpg)
+- [Пример 2. Обработчик ошибок на UnauthorizedUser](unathor_except.jpg)
+- [Пример 3. Обработчик ошибок на InvalidCredentials](invalid_cred.jpg)
 
 #### Пример ответа на запрос через сервис HTTP Client
 

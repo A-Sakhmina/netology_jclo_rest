@@ -1,17 +1,15 @@
 package com.sakhmina.domain;
 
-import lombok.Getter;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class User {
     @NotBlank
-    @Size(min=3, max=10)
+    @Size(min = 3, max = 10)
     private String userName;
     @NotBlank
-    @Size(min=6, max=15)
+    @Size(min = 6, max = 15)
     private String password;
 
     public User(String userName, String password) {

@@ -1,0 +1,47 @@
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    upstream myservers {
+        server localhost:8080;
+    }
+
+    server {
+	listen 80;
+        server_name  localhost;
+
+        location / {
+            proxy_pass http://myservers;
+        }
+
+	location /signin {
+            root   C:/Work/nginx-1.22.0/html;
+            index  signin.html;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   C:/Work/nginx-1.22.0/html;
+        }
+
+    }
+
+
+}
